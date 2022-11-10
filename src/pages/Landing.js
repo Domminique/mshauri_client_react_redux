@@ -1,7 +1,7 @@
-import main from '../assets/images/main.svg';
-import Wrapper from '../assets/wrappers/LandingPage';
-import { Logo } from '../components';
-import { Link } from 'react-router-dom';
+import main from '../assets/images/main.svg'
+import Wrapper from '../assets/wrappers/LandingPage'
+import { Logo } from '../components'
+import { Link } from 'react-router-dom'
 const Landing = () => {
   return (
     <Wrapper>
@@ -12,21 +12,21 @@ const Landing = () => {
         {/* info */}
         <div className='info'>
           <h1>
-            job <span>tracking</span> app
+            Mentors <span>Management</span> System
           </h1>
           <p>
-            Crucifix narwhal street art asymmetrical, humblebrag tote bag pop-up
-            fixie raclette taxidermy craft beer. Brunch bitters synth, VHS
-            crucifix heirloom meggings bicycle rights.
+            Simpler, more efficient and more effective way for project managers
+            to find verified mentors they love and a smarter way for meentes to
+            find fantastic mentors.
           </p>
           <Link to='/register' className='btn btn-hero'>
-            Login/Register
+            Get started
           </Link>
         </div>
         <img src={main} alt='job hunt' className='img main-img' />
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Landing;
+export default Landing

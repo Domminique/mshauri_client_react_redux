@@ -10,6 +10,8 @@
 
 Find the Project Useful? [You can always buy me a coffee] -> my paypal imbugad@gmail.com
 
+see the app in action here \_ [https://mshauri.netlify.app/landing]
+
 #### Run The App Locally
 
 ```sh
