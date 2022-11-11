@@ -1,6 +1,8 @@
 # AP12022 Dedicated to Wavy, my gorgeous girlfriend.. starDate 24th Sept 2022
 
-# To support the practise of shipping at Savannaspace in AI, Cloud and Mobile
+# To support the practise of shipping at Savannaspace in AI, Cloud and Mobile,
+
+# Company Logo and theme : #236de6
 
 ### The App currently Supports Uchao, Ongata Rongai Online, EmedAfrica, ...
 

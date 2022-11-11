@@ -1,18 +1,19 @@
-import img1 from '../images/patient.svg'
-import img2 from '../images/serviceprovider.svg'
+import img1 from '../images/svg-23.svg'
+import img2 from '../images/svg-22.svg'
 
-import img3 from '../images/svg-11.svg'
+import img3 from '../images/svg-22.svg'
 
 export const homeObjOne = {
   id: 'about',
   lightBg: false,
   lightText: true,
   lightTextDesc: true,
-  topLine: 'For health care  service providers',
-  headline: 'Aiming to bridge the gab between hospital care and treatment, home based and ambulance tranfer.',
+  topLine: 'For Project Managers',
+  headline:
+    'Mshauri is the customizable platform for all  mentoring models that you need.',
   description:
-    'We empower service providers with cutting edge technologies that help them  manage bookings, maximize their reach, minimize cost as they provide wholistic emergency and convinient care to clients per their health needs anywhere anytime! ',
-  buttonLabel: 'Join as a service provider',
+    'We empower project managers with cutting edge technologies that enables them check useful graphics to measure their mentoring program, view engagement reports, detailed meeting lists, graphics, custom reports needs anywhere anytime! ',
+  buttonLabel: 'Start building your own mentoring program',
   imgStart: false,
   img: img1,
   alt: 'Car',
@@ -26,11 +27,11 @@ export const homeObjTwo = {
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: 'Advancing access to healthcare services for Patients',
-  headline: 'Get the best health services, insurance, dental, inpatient and more, ',
+  topLine: 'Create transformational mentorship relationships',
+  headline: "Positively Impact a mentee's life ",
   description:
-    'Transforming the delivery of health services to patients by connecting them directly to doctors, helping them avoid unnecessary referrals and reduces costs for them while improving efficiency and bettering their care ',
-  buttonLabel: 'Join as a patient',
+    'Transformational relationships help mentees fully realise their career goals and aspirations. Regardless of how senior or junior you are it is incredible to support others and learn from them as well. ',
+  buttonLabel: 'Join as a mentor',
   imgStart: true,
   img: img2,
   alt: 'API integration',

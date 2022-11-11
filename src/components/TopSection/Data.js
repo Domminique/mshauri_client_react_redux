@@ -1,9 +1,9 @@
-import img1 from '../images/svg-20.svg'
-import img2 from '../images/svg-13.svg'
-import img3 from '../images/svg-17.svg'
-import img4 from '../images/svg-18.svg'
-import img5 from '../images/svg-19.svg'
-import img6 from '../images/svg-13.svg'
+import img1 from '../images/svg-22.svg'
+import img2 from '../images/svg-23.svg'
+import img3 from '../images/svg-24.svg'
+import img4 from '../images/svg-25.svg'
+import img5 from '../images/svg-26.svg'
+import img6 from '../images/svg-22.svg'
 
 export const homeObjOne = {
   id: 'about',
