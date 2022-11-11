@@ -11,6 +11,8 @@ const initialState = {
   email: '',
   password: '',
   phonenumber: '',
+  organisation: '',
+  country: '',
   isMember: true,
 }
 
@@ -28,7 +30,15 @@ function Register() {
   }
   const onSubmit = (e) => {
     e.preventDefault()
-    const { name, email, password, phonenumber, isMember } = values
+    const {
+      name,
+      email,
+      password,
+      phonenumber,
+      organisation,
+      country,
+      isMember,
+    } = values
     if (!email || !password || (!isMember && !name)) {
       toast.error('Please fill out all fields')
       return
@@ -37,7 +47,16 @@ function Register() {
       dispatch(loginUser({ email: email, password: password }))
       return
     }
-    dispatch(registerUser({ name, email, phonenumber, password }))
+    dispatch(
+      registerUser({
+        name,
+        email,
+        phonenumber,
+        organisation,
+        country,
+        password,
+      })
+    )
   }
 
   const toggleMember = () => {
@@ -54,7 +73,13 @@ function Register() {
     <Wrapper className='full-page'>
       <form className='form' onSubmit={onSubmit}>
         <Logo />
-        <h3>{values.isMember ? 'Login' : 'Register'}</h3>
+        <h3>
+          {values.isMember
+            ? 'Login'
+            : 'Ready to start your own mentorship program?'}
+        </h3>
+        {/* name field */}
+
         {/* name field */}
         {!values.isMember && (
           <FormRow
@@ -80,6 +105,23 @@ function Register() {
             handleChange={handleChange}
           />
         )}
+        {!values.isMember && (
+          <FormRow
+            type='text'
+            name='organisation'
+            value={values.organisation}
+            handleChange={handleChange}
+          />
+        )}
+        {/* name field */}
+        {!values.isMember && (
+          <FormRow
+            type='text'
+            name='country'
+            value={values.country}
+            handleChange={handleChange}
+          />
+        )}
         {/* password field */}
         <FormRow
           type='password'
@@ -92,7 +134,9 @@ function Register() {
         </button>
 
         <p>
-          {values.isMember ? 'Not a member yet?' : 'Already a member?'}
+          {values.isMember
+            ? 'Not running a program yet?'
+            : 'Are you running a program already?'}
           <button type='button' onClick={toggleMember} className='member-btn'>
             {values.isMember ? 'Register' : 'Login'}
           </button>
