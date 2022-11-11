@@ -1,15 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { Landing, Error, Register, ProtectedRoute } from './pages';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Landing, Error, Register, ProtectedRoute } from './pages'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import {
   Profile,
   AddJob,
   AllJobs,
   Stats,
   SharedLayout,
-} from './pages/dashboard';
+} from './pages/dashboard'
+import Footer from './components/Footer'
 function App() {
   return (
     <BrowserRouter>
@@ -32,8 +33,9 @@ function App() {
         <Route path='*' element={<Error />} />
       </Routes>
       <ToastContainer position='top-center' />
+      <Footer />
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
