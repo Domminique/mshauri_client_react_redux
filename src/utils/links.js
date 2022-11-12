@@ -7,7 +7,7 @@ const links = [
   { id: 1, text: 'stats', path: '/', icon: <IoBarChartSharp /> },
   { id: 2, text: 'all mentors', path: 'all-jobs', icon: <MdQueryStats /> },
   { id: 3, text: 'add mentor', path: 'add-job', icon: <FaWpforms /> },
-  { id: 4, text: 'upload mentees', path: 'profile', icon: <ImProfile /> },
+  { id: 4, text: 'upload mentees', path: 'mentees', icon: <ImProfile /> },
   { id: 4, text: 'program', path: 'profile', icon: <ImProfile /> },
 ]
 

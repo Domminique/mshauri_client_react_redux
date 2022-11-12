@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { updateUser } from '../../features/user/userSlice'
 
-const Profile = () => {
+const Mentees = () => {
   const { isLoading, user } = useSelector((store) => store.user)
   const dispatch = useDispatch()
   const [userData, setUserData] = useState({
@@ -37,11 +37,38 @@ const Profile = () => {
   return (
     <Wrapper>
       <form className='form' onSubmit={handleSubmit}>
-        <h3>program profile</h3>
+        <h3>Automatically upload meentes and match</h3>
         <p>
-          Tell us more about your mentoring program, this will help us
-          customized the platform to help your organisation achieve the desired
-          measurable results.
+          Using a custom algorithm Mshauri, will pair your mentors with mentees
+          basing on profile information provided, this will help us customized
+          the platform to help your organisation achieve the desired measurable
+          results. uploads can be pdf, excell or json.
+          <span>
+            {' '}
+            <br />
+            <strong>Data format: </strong> for our matching algorithm to work
+            properly with your mentees data have the following fields :{' '}
+            <i>
+              (a)country, (b)goals-what the mentee want to achieve,
+              (c)skills-what does mentee wants to learn, (d)city/state,
+              (e)gender, (f)proximity - do the mentee prefer it face-to-face or
+              remote{' '}
+            </i>
+          </span>
+        </p>
+        <button className='btn ' disabled={isLoading}>
+          {isLoading ? 'Please Wait...' : 'upload mentees'}
+        </button>{' '}
+        <button className='btn ' disabled={isLoading}>
+          {isLoading ? 'Please Wait...' : 'View all mentees'}
+        </button>
+        <br />
+        <p></p>
+        <h3> Manually create and invite mentees</h3>
+        <p>
+          Form builder that will automatically send emails to the meentes
+          inviting them to join the platform , Telling them more about your
+          mentoring program.
         </p>
         <div className='form-center'>
           <FormRow
@@ -65,7 +92,7 @@ const Profile = () => {
           />
           <FormRow
             type='text'
-            labelText='language'
+            labelText='sex'
             name='lastName'
             value={userData.lastName}
             handleChange={handleChange}
@@ -128,11 +155,11 @@ const Profile = () => {
             handleChange={handleChange}
           />
           <button type='submit' className='btn btn-block' disabled={isLoading}>
-            {isLoading ? 'Please Wait...' : 'save changes'}
+            {isLoading ? 'Please Wait...' : 'Add Mentee'}
           </button>
         </div>
       </form>
     </Wrapper>
   )
 }
-export default Profile
+export default Mentees

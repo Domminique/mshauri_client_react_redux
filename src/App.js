@@ -7,6 +7,7 @@ import {
   Profile,
   AddJob,
   AllJobs,
+  Mentees,
   Stats,
   SharedLayout,
 } from './pages/dashboard'
@@ -27,6 +28,7 @@ function App() {
           <Route path='all-jobs' element={<AllJobs />} />
           <Route path='add-job' element={<AddJob />} />
           <Route path='profile' element={<Profile />} />
+          <Route path='mentees' element={<Mentees />} />
         </Route>
         <Route path='landing' element={<Landing />} />
         <Route path='register' element={<Register />} />
