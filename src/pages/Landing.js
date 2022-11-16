@@ -9,6 +9,8 @@ import {
   homeObjThree,
 } from '../components/InfoSection/Data'
 import QandA from '../components/QandA'
+import ReviewsComponent from '../components/ReviewsComponent'
+
 const Landing = () => {
   return (
     <>
@@ -43,7 +45,9 @@ const Landing = () => {
       <br />
       <InfoSection {...homeObjTwo} />
       {/* Reviwws */}
-      {/* <InfoSection {...homeObjThree} /> */}
+
+      <ReviewsComponent />
+      <InfoSection {...homeObjThree} />
     </>
   )
 }

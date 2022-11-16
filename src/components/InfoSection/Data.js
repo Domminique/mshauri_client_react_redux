@@ -1,7 +1,7 @@
 import img1 from '../images/svg-23.svg'
 import img2 from '../images/svg-22.svg'
 
-import img3 from '../images/svg-22.svg'
+import img3 from '../images/mshaurimobile.png'
 
 export const homeObjOne = {
   id: 'about',
@@ -45,14 +45,14 @@ export const homeObjThree = {
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: 'Shop on their behalf,',
-  headline: 'On-demand delivery to the mass market ',
+  topLine: 'Mshauri Mobile app',
+  headline: 'You are walking with mentoring tool in your pocket literally  ',
   description:
-    'Time is a precious commodity for today’s consumer ,help people make more time for what they enjoy most.',
-  buttonLabel: 'Start Now',
+    'Time is a precious commodity for today’s consumer ,Download mshauri mobile app and  help people make more time for what they enjoy most.',
+  buttonLabel: 'Download mobile app',
   imgStart: false,
   img: img3,
-  alt: 'Shop on your behalf',
+  alt: 'Mobile app',
   dark: false,
   primary: false,
   darkText: true,

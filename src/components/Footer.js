@@ -59,7 +59,7 @@ const Footer = () => {
               <FooterLink to='# '>Non-profit</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle> Business</FooterLinkTitle>
+              <FooterLinkTitle> Community</FooterLinkTitle>
               <FooterLink to='/register '>Project managers</FooterLink>
               <FooterLink to='/register'>Mentors</FooterLink>
               <FooterLink to='/register'>Mentees</FooterLink>
