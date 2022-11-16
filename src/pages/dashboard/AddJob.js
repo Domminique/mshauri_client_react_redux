@@ -12,7 +12,20 @@ import { useEffect } from 'react'
 const AddJob = () => {
   const {
     isLoading,
+    name,
+    email,
+    phonenumber,
     position,
+    skills,
+    experience,
+    goals,
+    gender,
+    proximity,
+    language,
+    mentorLocation,
+    proximityOptions,
+    availability,
+
     company,
     jobLocation,
     jobType,
@@ -62,71 +75,95 @@ const AddJob = () => {
 
   return (
     <Wrapper>
+      <h3>Automatically upload mentors and match with mentees</h3>
+      <p>
+        Using a custom algorithm Mshauri, will pair your mentors with mentees
+        basing on profile information provided, uploads formats, excell or json.
+      </p>
+      <button className='btn ' disabled={isLoading}>
+        {isLoading ? 'Please Wait...' : 'upload mentors'}
+      </button>{' '}
+      <br />
+      <br />
       <form className='form'>
         <h3>{isEditing ? 'Manage mentor' : 'add mentor'}</h3>
         <div className='form-center'>
-          {/* position */}
+          {/*  name, */}
           <FormRow
             type='text'
             labelText='Name'
-            name='position'
-            value={position}
+            name='name'
+            value={name}
             handleChange={handleJobInput}
           />
-          {/* position */}
+          {/* email */}
           <FormRow
             type='text'
             labelText='email'
-            name='position'
-            value={position}
+            name='email'
+            value={email}
             handleChange={handleJobInput}
           />
-          {/* position */}
+          {/* phonenumber */}
           <FormRow
             type='text'
             labelText='phone number'
-            name='position'
-            value={position}
+            name='phonenumber'
+            value={phonenumber}
             handleChange={handleJobInput}
           />
-          {/* position */}
+          <FormRow
+            type='text'
+            labelText='language'
+            name='language'
+            value={language}
+            handleChange={handleJobInput}
+          />
+          {/* Skills */}
           <FormRow
             type='text'
             labelText='Skills'
-            name='position'
-            value={position}
+            name='skills'
+            value={skills}
             handleChange={handleJobInput}
           />
-          {/* company */}
+          {/* Experience */}
           <FormRow
             type='text'
-            labelText='Experience'
-            name='company'
-            value={company}
+            labelText=' Experience'
+            name='experience'
+            value={experience}
             handleChange={handleJobInput}
           />
-          {/* company */}
+          {/* Goals */}
           <FormRow
             type='text'
             labelText='Goals'
-            name='company'
-            value={company}
+            name='goals'
+            value={goals}
             handleChange={handleJobInput}
           />
-          {/* company */}
+          {/* Gender */}
           <FormRow
             type='text'
             labelText='Gender'
-            name='company'
-            value={company}
+            name='gender'
+            value={gender}
             handleChange={handleJobInput}
           />
-          {/* jobLocation */}
           <FormRow
             type='text'
-            name='jobLocation'
+            labelText='Availability (day & time)'
+            name='availability'
+            value={availability}
+            handleChange={handleJobInput}
+          />
+          {/* MentorLocation */}
+          <FormRow
+            type='text'
+            name='mentorLocation'
             labelText='location/city/state'
-            value={jobLocation}
+            value={mentorLocation}
             handleChange={handleJobInput}
           />
           {/* status */}
@@ -136,14 +173,15 @@ const AddJob = () => {
             handleChange={handleJobInput}
             list={statusOptions}
           />
-          {/* job type*/}
+
+          {/* status */}
           <FormRowSelect
-            name='jobType'
-            labelText='proximity'
-            value={jobType}
+            name='proximity'
+            value={proximity}
             handleChange={handleJobInput}
-            list={jobTypeOptions}
+            list={proximityOptions}
           />
+
           <div className='btn-container'>
             <button
               type='button'
@@ -165,107 +203,6 @@ const AddJob = () => {
       </form>
       <br />
       <br />
-      <form className='form'>
-        <h3>{isEditing ? 'edit mentee' : 'add mentee'}</h3>
-        <div className='form-center'>
-          {/* position */}
-          <FormRow
-            type='text'
-            labelText='Name'
-            name='position'
-            value={position}
-            handleChange={handleJobInput}
-          />
-          {/* position */}
-          <FormRow
-            type='text'
-            labelText='email'
-            name='position'
-            value={position}
-            handleChange={handleJobInput}
-          />
-          {/* position */}
-          <FormRow
-            type='text'
-            labelText='phone number'
-            name='position'
-            value={position}
-            handleChange={handleJobInput}
-          />
-          {/* position */}
-          <FormRow
-            type='text'
-            labelText='Skills'
-            name='position'
-            value={position}
-            handleChange={handleJobInput}
-          />
-          {/* company */}
-          {/* <FormRow
-            type='text'
-            labelText='Experience'
-            name='company'
-            value={company}
-            handleChange={handleJobInput}
-          /> */}
-          {/* company */}
-          {/* <FormRow
-            type='text'
-            labelText='Goals'
-            name='company'
-            value={company}
-            handleChange={handleJobInput}
-          /> */}
-          {/* company */}
-          {/* <FormRow
-            type='text'
-            labelText='Gender'
-            name='company'
-            value={company}
-            handleChange={handleJobInput}
-          /> */}
-          {/* jobLocation */}
-          <FormRow
-            type='text'
-            name='jobLocation'
-            labelText='location/city/state'
-            value={jobLocation}
-            handleChange={handleJobInput}
-          />
-          {/* status */}
-          {/* <FormRowSelect
-            name='status'
-            value={status}
-            handleChange={handleJobInput}
-            list={statusOptions}
-          /> */}
-          {/* job type*/}
-          <FormRowSelect
-            name='jobType'
-            labelText='proximity'
-            value={jobType}
-            handleChange={handleJobInput}
-            list={jobTypeOptions}
-          />
-          <div className='btn-container'>
-            <button
-              type='button'
-              className='btn btn-block clear-btn'
-              onClick={() => dispatch(clearValues())}
-            >
-              clear
-            </button>
-            <button
-              type='submit'
-              className='btn btn-block submit-btn'
-              onClick={handleSubmit}
-              disabled={isLoading}
-            >
-              update details
-            </button>
-          </div>
-        </div>
-      </form>
     </Wrapper>
   )
 }

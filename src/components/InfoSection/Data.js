@@ -31,7 +31,7 @@ export const homeObjTwo = {
   headline: "Positively Impact a mentee's life ",
   description:
     'Transformational relationships help mentees fully realise their career goals and aspirations. Regardless of how senior or junior you are it is incredible to support others and learn from them as well. ',
-  buttonLabel: 'Join as a mentor',
+  buttonLabel: 'Book a demo',
   imgStart: true,
   img: img2,
   alt: 'API integration',

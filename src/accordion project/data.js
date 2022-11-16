@@ -2,7 +2,7 @@ const questions = [
   {
     id: 1,
     title: 'How to import  data from my other system to Mshauri?',
-    info: 'Mshauri allows uploading data in many different formats --pdf,spreadsheets,json & API  --, before you upload you data please read our terms and services conditions to find the best data format.',
+    info: 'Mshauri allows uploading data in many different formats ,current supported formats are pdf, spreadsheets, json & API . ',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const questions = [
   {
     id: 4,
     title: 'Can I join as a mentee? ',
-    info: 'We are really sorry, you cannot . Please contact your program amanger to receive your program registration details.',
+    info: 'We are really sorry, you cannot . Please contact your program manager to receive your program registration details.',
   },
   {
     id: 5,

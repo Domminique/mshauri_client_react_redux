@@ -10,6 +10,9 @@ import {
   Mentees,
   Stats,
   SharedLayout,
+  Notifications,
+  ResourceCenter,
+  HelpCenter,
 } from './pages/dashboard'
 import Footer from './components/Footer'
 function App() {
@@ -29,9 +32,13 @@ function App() {
           <Route path='add-job' element={<AddJob />} />
           <Route path='profile' element={<Profile />} />
           <Route path='mentees' element={<Mentees />} />
+          <Route path='notifications' element={<Notifications />} />
+          <Route path='resource-center' element={<ResourceCenter />} />
+          <Route path='help-center' element={<HelpCenter />} />
         </Route>
         <Route path='landing' element={<Landing />} />
         <Route path='register' element={<Register />} />
+
         <Route path='*' element={<Error />} />
       </Routes>
       <ToastContainer position='top-center' />
