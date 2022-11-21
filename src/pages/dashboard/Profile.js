@@ -14,13 +14,31 @@ const Profile = () => {
     lastName: user?.lastName || '',
     location: user?.location || '',
     phonenumber: user?.phonenumber || '',
-    organisation: user?.organisation || '',
     country: user?.country || '',
+    organisation: user?.organisation || '',
+
+    demographics: user?.demographics || '',
+    culture: user?.culture || '',
+    orgType: user?.orgType || '',
+    hopes: user?.hopes || '',
+    dreams: user?.dreams || '',
   })
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const { name, email, lastName, location, phonenumber } = userData
+    const {
+      name,
+      email,
+      lastName,
+      location,
+      phonenumber,
+      organisation,
+      demographics,
+      culture,
+      orgType,
+      dreams,
+      hopes,
+    } = userData
     if (!name || !email || !lastName || !location || !phonenumber) {
       toast.error('please fill out all fields')
       return
@@ -124,7 +142,7 @@ const Profile = () => {
             type='text'
             labelText='What is your demographics target? eg over 40, mixed generation, ..'
             name='demographics'
-            value={userData.culture}
+            value={userData.demographics}
             handleChange={handleChange}
           />
           <button type='submit' className='btn btn-block' disabled={isLoading}>
@@ -132,6 +150,17 @@ const Profile = () => {
           </button>
         </div>
       </form>
+      <br />
+      <hr />
+      <FormRow
+        type='text'
+        labelText='Match Ratio (mentor:mentee)'
+        name=' Mentor: Mentee'
+      />
+      <br />
+      <button className='btn ' disabled={isLoading}>
+        {isLoading ? 'Please Wait...' : 'Match '}
+      </button>{' '}
     </Wrapper>
   )
 }

@@ -40,20 +40,80 @@ const AddJob = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (!position || !company || !jobLocation) {
-      toast.error('Please fill out all fields')
+    if (!name || !email || !phonenumber) {
+      toast.error('Please fill out all fieldins')
       return
     }
     if (isEditing) {
       dispatch(
         editJob({
           jobId: editJobId,
-          job: { position, company, jobLocation, jobType, status },
+          job: {
+            company,
+            jobLocation,
+            jobType,
+            status,
+            name,
+            email,
+            phonenumber,
+            position,
+            skills,
+            experience,
+            goals,
+            gender,
+            proximity,
+            language,
+            mentorLocation,
+            proximityOptions,
+            availability,
+          },
         })
       )
       return
     }
-    dispatch(createJob({ position, company, jobLocation, jobType, status }))
+
+    console.log(
+      company,
+      jobLocation,
+      jobType,
+      status,
+      name,
+      email,
+      phonenumber,
+      position,
+      skills,
+      experience,
+      goals,
+      gender,
+      proximity,
+      language,
+      mentorLocation,
+      proximityOptions,
+      availability
+    )
+
+    dispatch(
+      createJob({
+        position,
+        company,
+        jobLocation,
+        jobType,
+        status,
+        name,
+        email,
+        phonenumber,
+        position,
+        skills,
+        experience,
+        goals,
+        gender,
+        proximity,
+        language,
+        mentorLocation,
+        proximityOptions,
+        availability,
+      })
+    )
   }
 
   const handleJobInput = (e) => {
@@ -83,6 +143,7 @@ const AddJob = () => {
       <button className='btn ' disabled={isLoading}>
         {isLoading ? 'Please Wait...' : 'upload mentors'}
       </button>{' '}
+      <FormRow type='file' />
       <br />
       <br />
       <form className='form'>

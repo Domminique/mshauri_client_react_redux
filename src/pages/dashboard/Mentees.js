@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FormRow } from '../../components'
+import { FormRow, FormRowSelect } from '../../components'
 import Wrapper from '../../assets/wrappers/DashboardFormPage'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
@@ -8,30 +8,43 @@ import { updateUser } from '../../features/user/userSlice'
 const Mentees = () => {
   const { isLoading, user } = useSelector((store) => store.user)
   const dispatch = useDispatch()
-  const [userData, setUserData] = useState({
-    name: user?.name || '',
-    email: user?.email || '',
-    lastName: user?.lastName || '',
-    location: user?.location || '',
-    phonenumber: user?.phonenumber || '',
-    organisation: user?.organisation || '',
-    country: user?.country || '',
-  })
+
+  const {
+    name,
+    email,
+    phonenumber,
+    position,
+    skills,
+    experience,
+    goals,
+    gender,
+    proximity,
+    language,
+    mentorLocation,
+    proximityOptions,
+    availability,
+
+    company,
+    jobLocation,
+    jobType,
+    jobTypeOptions,
+    status,
+    statusOptions,
+    isEditing,
+    editJobId,
+  } = useSelector((store) => store.job)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const { name, email, lastName, location, phonenumber } = userData
-    if (!name || !email || !lastName || !location || !phonenumber) {
-      toast.error('please fill out all fields')
-      return
-    }
-    dispatch(updateUser(userData))
   }
-
+  const handleJobInput = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    dispatch(handleChange({ name, value }))
+  }
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
-    setUserData({ ...userData, [name]: value })
   }
 
   return (
@@ -73,86 +86,95 @@ const Mentees = () => {
         <div className='form-center'>
           <FormRow
             type='text'
+            labelText='Name'
             name='name'
-            labelText='program manager'
-            value={userData.name}
-            handleChange={handleChange}
+            value={name}
+            handleChange={handleJobInput}
           />
+          {/* email */}
           <FormRow
             type='text'
-            name='organisation'
-            value={userData.organisation}
-            handleChange={handleChange}
-          />
-          <FormRow
-            type='text'
-            name='country'
-            value={userData.country}
-            handleChange={handleChange}
-          />
-          <FormRow
-            type='text'
-            labelText='sex'
-            name='lastName'
-            value={userData.lastName}
-            handleChange={handleChange}
-          />
-          <FormRow
-            type='text'
-            labelText='Phone Number'
-            name='phonenumber'
-            value={userData.phonenumber}
-            handleChange={handleChange}
-          />
-          <FormRow
-            type='email'
+            labelText='email'
             name='email'
-            value={userData.email}
-            handleChange={handleChange}
+            value={email}
+            handleChange={handleJobInput}
+          />
+          {/* phonenumber */}
+          <FormRow
+            type='text'
+            labelText='phone number'
+            name='phonenumber'
+            value={phonenumber}
+            handleChange={handleJobInput}
           />
           <FormRow
             type='text'
-            name='location'
-            value={userData.location}
-            handleChange={handleChange}
+            labelText='language'
+            name='language'
+            value={language}
+            handleChange={handleJobInput}
+          />
+          {/* Skills */}
+          <FormRow
+            type='text'
+            labelText='Skills'
+            name='skills'
+            value={skills}
+            handleChange={handleJobInput}
+          />
+          {/* Experience */}
+          <FormRow
+            type='text'
+            labelText=' Experience'
+            name='experience'
+            value={experience}
+            handleChange={handleJobInput}
+          />
+          {/* Goals */}
+          <FormRow
+            type='text'
+            labelText='Goals'
+            name='goals'
+            value={goals}
+            handleChange={handleJobInput}
+          />
+          {/* Gender */}
+          <FormRow
+            type='text'
+            labelText='Gender'
+            name='gender'
+            value={gender}
+            handleChange={handleJobInput}
+          />
+          <FormRow
+            type='text'
+            labelText='Availability (day & time)'
+            name='availability'
+            value={availability}
+            handleChange={handleJobInput}
+          />
+          {/* MentorLocation */}
+          <FormRow
+            type='text'
+            name='mentorLocation'
+            labelText='location/city/state'
+            value={mentorLocation}
+            handleChange={handleJobInput}
+          />
+          {/* status */}
+          <FormRowSelect
+            name='status'
+            value={status}
+            handleChange={handleJobInput}
+            list={statusOptions}
           />
 
-          {/* <p>Why are you lauching a mentoring program?</p> */}
-
-          <FormRow
-            type='text'
-            labelText='Why are you lauching a mentoring program? eg. Talent retention, ..'
-            name='dreams'
-            value={userData.dreams}
-            handleChange={handleChange}
-          />
-          <FormRow
-            type='text'
-            labelText='What are you hoping your cohort will achieve? eg. more women in tech roles, ..'
-            name='hopes'
-            value={userData.hopes}
-            handleChange={handleChange}
-          />
-          <FormRow
-            type='text'
-            labelText='Is your type of organisation corporate 0r not-for-profit?'
-            name='orgType'
-            value={userData.orgType}
-            handleChange={handleChange}
-          />
-          <FormRow
-            type='text'
-            labelText='Is your  organisational culture formal or casual?'
-            name='culture'
-            value={userData.culture}
-            handleChange={handleChange}
-          />
-          <FormRow
-            type='text'
-            labelText='What is your demographics target? eg over 40, mixed generation, ..'
-            name='demographics'
-            value={userData.culture}
-            handleChange={handleChange}
+          {/* status */}
+          <FormRowSelect
+            name='proximity'
+            value={proximity}
+            handleChange={handleJobInput}
+            list={proximityOptions}
           />
           <button type='submit' className='btn btn-block' disabled={isLoading}>
             {isLoading ? 'Please Wait...' : 'Add Mentee'}
